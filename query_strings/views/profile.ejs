@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Home di prova</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body{
+    background: skyblue;
+    font-family: serif;
+    color : #fff;
+}
+
+h1{
+    font-size: 48;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+p, li{
+    font-size: 16px;
+    text-align: center;
+}
+h2{
+    font-size: 30;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+}
+        </style>    
+    </head>
+    <body>
+
+    <!--Navbar-->
+    <% include partials/nav.ejs %>
+    <h1>Benvenuto nel profilo di : <%=person%> </h1>
+    <p>Age : <%=data.age%></p>
+    <p>Job : <%=data.job%></p>
+    <h2>Hobbies:</h2>
+    <ul>
+        <%data.hobbies.forEach(function(item){ %>
+            <li><%= item %></li>
+         <% });%>
+    </ul>
+    </body>
+</html>
